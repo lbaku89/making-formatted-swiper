@@ -1,9 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.html {
+  font-size: 16px;
+}
+
 .navi-next-button {
-	width: 100px;
-	height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .navi-prev-button {
-	width: 100px;
-	height: 100px;
+  width: 100px;
+  height: 100px;
+}
+
+.max-width-1140px {
+  max-width: 1140px !important;
+}
+.max-width-240px {
+  max-width: 240px !important;
+}
+
+// Goods.js
+
+@media (max-width: 576px) {
+  #GoodsSliderContainer {
+    max-width: 89.7916666667vw;
+    margin-left: 1.7708333333vw;
+  }
+}
+
+#goodsName {
+  font-size: 15px;
+  font-weight: normal;
+  color: #333333;
+  overflow: hidden;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+@media (max-width: 576px) {
+  #goodsName {
+    font-size: 3.75vw;
+  }
+}
+
+#goodsPrice {
+  padding-top: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  overflow: hidden;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+@media (max-width: 576px) {
+  #goodsPrice {
+    font-size: 4.375vw;
+  }
+}
+
+@media (max-width: 576px) {
+  #goodsImg {
+    width: 43.9583333333vw !important;
+  }
 }
