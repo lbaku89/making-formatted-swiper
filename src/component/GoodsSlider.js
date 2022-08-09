@@ -135,7 +135,7 @@ const GoodsSlider = function () {
 					}}
 					// loop={true}
 					autoplay={{ delay: 2000 }}
-					className={"mySwiper relative max-width-1020px pb-8"}
+					className={"mySwiper relative max-width-1020px pb-[32px]"}
 					slidesPerView={1}
 					spaceBetween={20}
 					mousewheel={{ invert: true }}
