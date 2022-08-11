@@ -7,8 +7,8 @@ const fetchStylePropertySlice = createSlice({
 		styleProperty: {
 			GoodsSlider: {
 				spaceBetween_768: "20",
-				slidesPerView_992: "4",
-				slidesPerView_768: "4",
+				slidesPerView_992: "2",
+				slidesPerView_768: "2",
 				slidesPerView_320: "2",
 			},
 		},

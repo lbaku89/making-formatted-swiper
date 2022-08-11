@@ -1,41 +1,24 @@
 import React, { useEffect, useState } from "react";
-// swiper
+// import swiper library
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Mousewheel, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/mousewheel";
 import "swiper/css/autoplay";
-import axios from "axios";
 
-// component 연결
+// import Component, api
 import { Goods } from "./Goods";
+import { fetchGoodsData } from "../api/api";
 
 const GoodsSlider = function () {
-	// fake server 에서 goodsData 가져오느 Fn
-	const fetchGoodsData = async () => {
-		const response = await axios
-			.get("http://localhost:3001/defaultGoodsData")
-			.then((response) => {
-				console.log(response.data);
-				return response.data;
-			})
-			.catch((err) => {
-				console.log("data get err => ", err);
-			});
-		setGoodsData(response);
-	};
-
+	// fetch Goods Data
 	const [goodsData, setGoodsData] = useState([]);
-	// browser wdith 조정
-	const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
-
-	// rendering 관리
 	useEffect(() => {
-		setBrowserWidth(window.browserWidth);
 		console.log("useEffect!");
-		fetchGoodsData();
-	}, [browserWidth]);
+		fetchGoodsData("http://localhost:3001/defaultGoodsData", setGoodsData);
+	}, []);
+	// fetch default style property
 
 	return (
 		<>
