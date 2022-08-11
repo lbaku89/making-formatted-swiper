@@ -6,8 +6,9 @@ const fetchStylePropertyAction = createAsyncThunk(
 	"fetchStylePropertyAction",
 	async () => {
 		const response = await axios
-			.get("http://localhost:3001/defaultStyleProperty")
+			.get("http://localhost:3001/skinFood")
 			.then((response) => {
+				console.log("response=>", response.data);
 				return response.data;
 			})
 			.catch((err) => {

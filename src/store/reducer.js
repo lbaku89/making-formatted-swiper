@@ -4,15 +4,12 @@ import { fetchStylePropertyAction } from "./actions/fetchStylePropertyAction";
 const fetchStylePropertySlice = createSlice({
 	name: "fetchStylePropertySlice",
 	initialState: {
-		styleProperty: {
-			GoodsSlider: {
-				spaceBetween_768: "20",
-				slidesPerView_992: "2",
-				slidesPerView_768: "2",
-				slidesPerView_320: "2",
-			},
+		GoodsSlider: {
+			spaceBetween_768: 0,
+			slidesPerView_992: 8,
+			slidesPerView_768: 2,
+			slidesPerView_320: 2,
 		},
-		status: "style data 요청 안함",
 	},
 	reducer: {},
 	extraReducers: (builder) => {
@@ -21,7 +18,8 @@ const fetchStylePropertySlice = createSlice({
 		});
 		builder.addCase(fetchStylePropertyAction.fulfilled, (state, action) => {
 			state.status = "load success";
-			state.styleProperty = action.payload;
+			state.GoodsSlider = action.payload.GoodsSlider;
+			console.log("action.payload=>", state.GoodsSlider);
 		});
 		builder.addCase(fetchStylePropertyAction.rejected, (state, action) => {
 			state.status = "load fail";

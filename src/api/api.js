@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // goodsData 가져오는 api
-const fetchGoodsData = async (url, setDataHooks) => {
+const fetchGoodsData = async (url, setData) => {
 	const response = await axios
 		.get(url)
 		.then((response) => {
@@ -11,7 +11,7 @@ const fetchGoodsData = async (url, setDataHooks) => {
 		.catch((err) => {
 			console.log("data get err => ", err);
 		});
-	setDataHooks(response);
+	setData(response);
 };
 
 export { fetchGoodsData };
