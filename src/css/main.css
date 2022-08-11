@@ -1,8 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.html {
+html {
   font-size: 16px;
+  font-family: "Noto Sans KR", sans-serif !important;
 }
 
 .max-width-1140px {
@@ -24,11 +25,13 @@
     padding-right: 5.2083333333vw !important;
   }
 }
+
 @media (min-width: 992px) {
   .swiperSlide {
     max-width: 240px;
   }
 }
+
 .swiper-pagination-bullet {
   width: 8px;
   height: 8px;
@@ -62,6 +65,7 @@
     font-size: 3.75vw;
   }
 }
+
 #goodsPrice {
   padding-top: 5px;
   font-size: 18px;
@@ -79,8 +83,9 @@
     font-size: 4.375vw !important;
   }
 }
+
 @media (max-width: 576px) {
   #goodsImg {
-    width: 43.9583333333vw;
+    width: calc(((844 / 3) / 2) * 100 / 320 * 1vw);
   }
-}/*# sourceMappingURL=main.css.map */
+}
