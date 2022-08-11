@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// goodsData 가져오는 api
+// get 방식으로 Data 가져오는 api
 const fetchGoodsData = async (url, setData) => {
 	const response = await axios
 		.get(url)

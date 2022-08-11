@@ -3,6 +3,6 @@ import fetchStylePropertySlice from "./reducer";
 
 export const store = configureStore({
 	reducer: {
-		fetchStyleProperty: fetchStylePropertySlice.reducer,
+		fetchStylePropertySlice: fetchStylePropertySlice.reducer,
 	},
 });
