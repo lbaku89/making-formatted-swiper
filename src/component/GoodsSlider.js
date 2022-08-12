@@ -13,7 +13,7 @@ import { useSelector } from "react-redux";
 
 const GoodsSlider = function () {
   //redux store에 접근
-  const skinFoodStyle = useSelector((state) => {
+  const styleProperty = useSelector((state) => {
     return state.fetchStylePropertySlice;
   });
 
@@ -25,34 +25,55 @@ const GoodsSlider = function () {
 
   return (
     <>
-      <div id="goodsSliderContainer" className="max-width-1140px mx-auto">
+      <div
+        id="goodsSliderContainer"
+        className=""
+        style={{
+          maxWidth: styleProperty.goodsSliderContainer.maxWidth,
+          margin: styleProperty.goodsSliderContainer.margin,
+        }}
+      >
         <Swiper
-          grabCursor={true}
+          id="swiper"
+          grabCursor={null}
           modules={[Pagination, Autoplay, Mousewheel]}
           pagination={{
             clickable: true,
             type: "bullets",
           }}
           autoplay={{ delay: 2000 }}
-          className={"mySwiper relative max-width-1020px pb-[32px]"}
+          // className={"relative max-width-1020px pb-[32px]"}
+          style={{
+            position: styleProperty.swiper.position,
+            maxWidth: styleProperty.swiper.maxWidth,
+            padding: styleProperty.swiper.padding,
+            // "@media(max-width: 576px)": {
+            //   maxWidth: "89.7916666667vw",
+            //   padding: "0 5.2083333333vw",
+            // },
+          }}
           slidesPerView={1}
           spaceBetween={20}
           mousewheel={{ invert: true }}
           breakpoints={{
             320: {
-              slidesPerView: skinFoodStyle.GoodsSlider.slidesPerView_320,
-              slidesPerGroup: 2,
+              slidesPerView: styleProperty.swiper.breakpoints.slidesPerView_320,
+              slidesPerGroup:
+                styleProperty.swiper.breakpoints.slidesPerGroup_320,
               spaceBetween: window.innerWidth * 0.01 * 1.6666666667,
             },
             768: {
-              slidesPerView: skinFoodStyle.GoodsSlider.slidesPerView_768,
-              slidesPerGroup: 2,
-              spaceBetween: skinFoodStyle.GoodsSlider.spaceBetween_768,
+              slidesPerView: styleProperty.swiper.breakpoints.slidesPerView_768,
+              slidesPerGroup:
+                styleProperty.swiper.breakpoints.slidesPerGroup_768,
+              spaceBetween: styleProperty.swiper.breakpoints.spaceBetween_768,
             },
             1024: {
-              slidesPerView: skinFoodStyle.GoodsSlider.slidesPerView_1024,
-              slidesPerGroup: 4,
-              spaceBetween: 20,
+              slidesPerView:
+                styleProperty.swiper.breakpoints.slidesPerView_1024,
+              slidesPerGroup:
+                styleProperty.swiper.breakpoints.slidesPerGroup_1024,
+              spaceBetween: styleProperty.swiper.breakpoints.spaceBetween_1024,
             },
           }}
         >
