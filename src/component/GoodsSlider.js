@@ -79,7 +79,13 @@ const GoodsSlider = function () {
         >
           {goodsData.map((goodsData) => {
             return (
-              <SwiperSlide className="flex justify-center swiperSlide">
+              <SwiperSlide
+                className="swiperSlide"
+                style={{
+                  display: styleProperty.swiperSlide.display,
+                  justifyContent: styleProperty.swiperSlide.justifyContent,
+                }}
+              >
                 <Goods data={goodsData} className=""></Goods>
               </SwiperSlide>
             );

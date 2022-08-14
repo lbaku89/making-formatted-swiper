@@ -29,6 +29,10 @@ const fetchStylePropertySlice = createSlice({
         // slidesPerView_320: 2,
       },
     },
+    swiperSlide: {
+      display: "flex",
+      justifyContent: "center",
+    },
   },
   reducer: {},
 });
