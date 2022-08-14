@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 export function Goods(props) {
   const styleProperty = useSelector((state) => {
-    return state.fetchStylePropertySlice;
+    return state.fetchStylePropertySlice.style;
   });
   return (
     <div
@@ -52,8 +52,8 @@ export function Goods(props) {
               overFlow: styleProperty.goodsName.overFlow,
               wordBreak: styleProperty.goodsName.wordBreak,
               display: styleProperty.goodsName.dispaly,
-              webkitLineClamp: styleProperty.goodsName.webkitLineClamp,
-              webkitBoxOrient: styleProperty.goodsName.webkitBoxOrient,
+              WebkitLineClamp: styleProperty.goodsName.webkitLineClamp,
+              WebkitBoxOrient: styleProperty.goodsName.webkitBoxOrient,
             }}
           >
             {props.data.goodsName}

@@ -9,22 +9,39 @@ import "swiper/css/autoplay";
 
 import { Goods } from "./Goods";
 import { fetchGoodsData } from "../function/api/fetchGoodsData";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { thunkFetchStyleProperty } from "../store/thunkFetchStyleProperty";
 
 const GoodsSlider = function () {
+  const dispatch = useDispatch();
+
   //redux store에 접근
   const styleProperty = useSelector((state) => {
-    return state.fetchStylePropertySlice;
+    return state.fetchStylePropertySlice.style;
   });
+
+  // const testData = useSelector((state) => {
+  //   return state.fetchStylePropertySlice.swiper.breakpoints.slidesPerView_1024;
+  // });
 
   // fetch Goods Data
   const [goodsData, setGoodsData] = useState([]);
   useEffect(() => {
+    console.log("useEffect시작");
     fetchGoodsData("http://localhost:3001/defaultGoodsData", setGoodsData);
-  }, []);
+    console.log("styleProperty=>", styleProperty);
+  }, [styleProperty]);
 
   return (
     <>
+      <button
+        onClick={() => {
+          dispatch(thunkFetchStyleProperty());
+        }}
+      >
+        click
+      </button>
+      <p>{styleProperty.swiper.breakpoints.slidesPerView_1024}</p>
       <div
         className="goodsSliderContainer"
         style={{
@@ -73,7 +90,7 @@ const GoodsSlider = function () {
             },
           }}
         >
-          {goodsData.map((goodsData) => {
+          {goodsData.map((goodsData, index) => {
             return (
               <SwiperSlide
                 className="swiperSlide"
@@ -81,6 +98,7 @@ const GoodsSlider = function () {
                   display: styleProperty.swiperSlide.display,
                   justifyContent: styleProperty.swiperSlide.justifyContent,
                 }}
+                key={index}
               >
                 <Goods data={goodsData} className=""></Goods>
               </SwiperSlide>
