@@ -28,10 +28,37 @@ const fetchStylePropertySlice = createSlice({
         // slidesPerView_768: 2,
         // slidesPerView_320: 2,
       },
+      goodsDiv: {},
     },
     swiperSlide: {
       display: "flex",
       justifyContent: "center",
+    },
+    goodsDiv: {
+      width: "100%",
+      height: "100%",
+      maxWidth: "240px",
+    },
+    goodsAtag: {
+      display: "block",
+    },
+    goodsImg: {
+      display: "block",
+      width: "100%",
+    },
+    goodsTextDiv: {
+      width: "100%",
+      padding: "16px 4px",
+    },
+    goodsName: {
+      fontSize: "15px",
+      fontWeight: "normal",
+      color: "#333333",
+      overFlow: "hidden",
+      wordBreak: "break-word",
+      display: "-webkit-box",
+      webkitLineClamp: "2",
+      webkitBoxOrient: "vertical",
     },
   },
   reducer: {},

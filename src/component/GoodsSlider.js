@@ -26,15 +26,14 @@ const GoodsSlider = function () {
   return (
     <>
       <div
-        id="goodsSliderContainer"
-        className=""
+        className="goodsSliderContainer"
         style={{
           maxWidth: styleProperty.goodsSliderContainer.maxWidth,
           margin: styleProperty.goodsSliderContainer.margin,
         }}
       >
         <Swiper
-          id="swiper"
+          className="swiper"
           grabCursor={null}
           modules={[Pagination, Autoplay, Mousewheel]}
           pagination={{
@@ -42,15 +41,10 @@ const GoodsSlider = function () {
             type: "bullets",
           }}
           autoplay={{ delay: 2000 }}
-          // className={"relative max-width-1020px pb-[32px]"}
           style={{
             position: styleProperty.swiper.position,
             maxWidth: styleProperty.swiper.maxWidth,
             padding: styleProperty.swiper.padding,
-            // "@media(max-width: 576px)": {
-            //   maxWidth: "89.7916666667vw",
-            //   padding: "0 5.2083333333vw",
-            // },
           }}
           slidesPerView={1}
           spaceBetween={20}

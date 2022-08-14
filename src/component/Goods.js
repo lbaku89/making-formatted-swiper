@@ -1,27 +1,71 @@
 import React from "react";
 import { addComma } from "../function/utilities/addComma";
+import { useSelector } from "react-redux";
+
 export function Goods(props) {
+  const styleProperty = useSelector((state) => {
+    return state.fetchStylePropertySlice;
+  });
   return (
-    <div className="w-full h-full max-width-240px">
+    <div
+      className="goodsDiv"
+      style={{
+        width: styleProperty.goodsDiv.width,
+        height: styleProperty.goodsDiv.height,
+        maxWidth: styleProperty.goodsDiv.maxWidth,
+      }}
+    >
       <a
         href={props.data.goodsUrl}
         target="_blank"
-        className="block"
+        className="goodsAtag"
         rel="noreferrer"
+        style={{
+          display: styleProperty.goodsAtag.display,
+        }}
       >
         <div className="">
           <img
-            className="block w-full"
+            className="goodsImg"
             src={props.data.goodsImgUrl}
             alt="상품IMG URL"
-            id="goodsImg"
+            style={{
+              dispaly: styleProperty.goodsImg.display,
+              width: styleProperty.goodsImg.width,
+            }}
           />
         </div>
-        <div className="w-full py-[16px] px-[4px]">
-          <p title="${data.goodsName}" className="" id="goodsName">
+        <div
+          className="goodsTextDiv"
+          style={{
+            width: styleProperty.goodsTextDiv.width,
+            padding: styleProperty.goodsTextDiv.padding,
+          }}
+        >
+          <p
+            title="${data.goodsName}"
+            className="goodsName"
+            style={{
+              fontSize: styleProperty.goodsName.fontSize,
+              fontWeight: styleProperty.goodsName.fontWeight,
+              color: styleProperty.goodsName.color,
+              overFlow: styleProperty.goodsName.overFlow,
+              wordBreak: styleProperty.goodsName.wordBreak,
+              display: styleProperty.goodsName.dispaly,
+              webkitLineClamp: styleProperty.goodsName.webkitLineClamp,
+              webkitBoxOrient: styleProperty.goodsName.webkitBoxOrient,
+            }}
+          >
             {props.data.goodsName}
           </p>
-          <p className="" id="goodsPrice">
+          <p
+            className="goodsPrice"
+            style={{
+              padding: "5px 0 0 0",
+              fontSize: "18px",
+              fontWeight: "bold",
+            }}
+          >
             &#8361;{addComma(props.data.goodsPrice)}
           </p>
         </div>

@@ -6,20 +6,8 @@ html {
   font-family: "Noto Sans KR", sans-serif !important;
 }
 
-.max-width-1140px {
-  max-width: 1140px !important;
-}
-
-.max-width-240px {
-  max-width: 240px !important;
-}
-
-.max-width-1020px {
-  max-width: 1020px !important;
-}
-
 @media (max-width: 576px) {
-  #goodsSliderContainer {
+  .goodsSliderContainer {
     max-width: 89.7916666667vw;
     padding-left: 5.2083333333vw !important;
     padding-right: 5.2083333333vw !important;
@@ -49,43 +37,20 @@ html {
   border-radius: 4px;
 }
 
-#goodsName {
-  font-size: 15px;
-  font-weight: normal;
-  color: #333333;
-  overflow: hidden;
-  word-break: break-word;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-
 @media (max-width: 576px) {
-  #goodsName {
+  .goodsName {
     font-size: 3.75vw;
   }
 }
 
-#goodsPrice {
-  padding-top: 5px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #000000;
-  overflow: hidden;
-  word-break: break-word;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-
 @media (max-width: 576px) {
-  #goodsPrice {
+  .goodsPrice {
     font-size: 4.375vw !important;
   }
 }
 
 @media (max-width: 576px) {
-  #goodsImg {
+  .goodsImg {
     width: calc(((844 / 3) / 2) * 100 / 320 * 1vw);
   }
 }
