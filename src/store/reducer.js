@@ -60,6 +60,11 @@ const fetchStylePropertySlice = createSlice({
       webkitLineClamp: "2",
       webkitBoxOrient: "vertical",
     },
+    goodsPrice: {
+      padding: "5px 0 0 0",
+      fontSize: "18px",
+      fontWeight: "bold",
+    },
   },
   reducer: {},
 });

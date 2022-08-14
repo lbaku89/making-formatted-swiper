@@ -61,9 +61,9 @@ export function Goods(props) {
           <p
             className="goodsPrice"
             style={{
-              padding: "5px 0 0 0",
-              fontSize: "18px",
-              fontWeight: "bold",
+              padding: styleProperty.goodsPrice.padding,
+              fontSize: styleProperty.goodsPrice.fontSize,
+              fontWeight: styleProperty.goodsPrice.fontWeight,
             }}
           >
             &#8361;{addComma(props.data.goodsPrice)}

@@ -36,6 +36,7 @@ const GoodsSlider = function () {
           className="swiper"
           grabCursor={null}
           modules={[Pagination, Autoplay, Mousewheel]}
+          // 변수화 실패
           pagination={{
             clickable: true,
             type: "bullets",
@@ -55,6 +56,7 @@ const GoodsSlider = function () {
               slidesPerGroup:
                 styleProperty.swiper.breakpoints.slidesPerGroup_320,
               spaceBetween: window.innerWidth * 0.01 * 1.6666666667,
+              // 변수화 실패
             },
             768: {
               slidesPerView: styleProperty.swiper.breakpoints.slidesPerView_768,
