@@ -20,10 +20,6 @@ const GoodsSlider = function () {
 		return state.fetchStylePropertySlice.style;
 	});
 
-	// const testData = useSelector((state) => {
-	//   return state.fetchStylePropertySlice.swiper.breakpoints.slidesPerView_1024;
-	// });
-
 	// fetch Goods Data
 	const [goodsData, setGoodsData] = useState([]);
 	useEffect(() => {
@@ -141,7 +137,7 @@ const GoodsSlider = function () {
 					</div>
 				</>
 			) : (
-				<h1>없음</h1>
+				<h1>style을 선택후 show!를 클릭하시오</h1>
 			)}
 		</>
 	);
