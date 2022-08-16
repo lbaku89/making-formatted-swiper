@@ -3,9 +3,9 @@ import axios from "axios";
 
 const thunkFetchStyleProperty = createAsyncThunk(
 	"thunkFetchStyle",
-	async () => {
+	async (styleName) => {
 		const styleProperty = await axios
-			.get("http://localhost:3001/midasB")
+			.get(`http://localhost:3001/${styleName}`)
 			.then((response) => {
 				return response.data;
 			})

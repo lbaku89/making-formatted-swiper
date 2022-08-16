@@ -38,13 +38,19 @@ const GoodsSlider = function () {
 		<>
 			<button
 				onClick={() => {
-					dispatch(thunkFetchStyleProperty());
+					dispatch(thunkFetchStyleProperty("midasB"));
 				}}
 			>
 				midasB style
 			</button>
 			<br></br>
-			<button>default style</button>
+			<button
+				onClick={() => {
+					dispatch(thunkFetchStyleProperty("skinfood"));
+				}}
+			>
+				skinfood style
+			</button>
 			<br></br>
 			<button
 				onClick={() => {
@@ -56,7 +62,7 @@ const GoodsSlider = function () {
 			<br></br>
 			<button
 				onClick={() => {
-					setIsSelected(1);
+					setIsSelected(true);
 				}}
 			>
 				show!
